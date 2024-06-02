@@ -24,7 +24,7 @@ For support with KasmVNC, post on the [KasmVNC Project](https://github.com/kasmt
   - Automatic mixing of webp and jpeg based on CPU availability on server
   - WebRTC UDP Transit
   - Lossless QOI Image format for Local LAN
-  - [Dynamic jpeg/webp image coompression](https://github.com/kasmtech/KasmVNC/wiki/Video-Rendering-Options#dynamic-image-quality) quality settings based on screen change rates
+  - [Dynamic jpeg/webp image compression](https://github.com/kasmtech/KasmVNC/wiki/Video-Rendering-Options#dynamic-image-quality) quality settings based on screen change rates
   - Seemless clipboard support (on Chromium based browsers)
   - Binary clipboard support for text, images, and formatted text (on Chromium based browsers)
   - Allow client to set/change most configuration settings
@@ -56,4 +56,4 @@ KasmVNC has a built in web server and the web code is baked into KasmVNC. There 
 
 ## Development
 
-The noVNC code is webpacked for performance reasons. The CI pipeline in the KasmVNC project is repsonsible for building the web code and packaging it with KasmVNC.
+The noVNC code is webpacked for performance reasons. The CI pipeline in the KasmVNC project is responsible for building the web code and packaging it with KasmVNC.
