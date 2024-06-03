@@ -1508,10 +1508,11 @@ const UI = {
             //send a keep alive within a window that we control
             UI._sessionTimeoutInterval = setInterval(function() {
 
-                // if (!UI.rfb) {
-                //     Log.Error("The web socket was disconnected");
-                //     clearInterval(this);
-                // }
+                if (!UI.rfb) {
+                    Log.Error("Disconnected.");
+                    clearInterval(this);
+                    return;
+                }
 
                 const timeSinceLastActivityInS = (Date.now() - UI.rfb.lastActiveAt) / 1000;
                 let idleDisconnectInS = 60; //20 minute default 
