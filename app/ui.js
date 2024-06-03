@@ -1373,8 +1373,6 @@ const UI = {
 
     connect(event, password) {
 
-        clearInterval(UI._sessionTimeoutInterval);
-
         // Ignore when rfb already exists
         if (typeof UI.rfb !== 'undefined') {
             return;
@@ -1510,8 +1508,13 @@ const UI = {
             //send a keep alive within a window that we control
             UI._sessionTimeoutInterval = setInterval(function() {
 
+                // if (!UI.rfb) {
+                //     Log.Error("The web socket was disconnected");
+                //     clearInterval(this);
+                // }
+
                 const timeSinceLastActivityInS = (Date.now() - UI.rfb.lastActiveAt) / 1000;
-                let idleDisconnectInS = 1200; //20 minute default 
+                let idleDisconnectInS = 60; //20 minute default 
                 if (Number.isFinite(parseFloat(UI.rfb.idleDisconnect))) {
                     idleDisconnectInS = parseFloat(UI.rfb.idleDisconnect) * 60;
                 }
