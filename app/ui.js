@@ -1373,6 +1373,8 @@ const UI = {
 
     connect(event, password) {
 
+        clearInterval(UI._sessionTimeoutInterval);
+
         // Ignore when rfb already exists
         if (typeof UI.rfb !== 'undefined') {
             return;
